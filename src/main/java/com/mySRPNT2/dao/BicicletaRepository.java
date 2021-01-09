@@ -6,6 +6,5 @@ import com.mySRPNT2.entity.Bicicleta;
 
 public interface BicicletaRepository extends JpaRepository<Bicicleta, Long> {
 	
-	
 
 }

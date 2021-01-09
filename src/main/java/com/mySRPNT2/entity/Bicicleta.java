@@ -7,11 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-
-import org.dom4j.swing.XMLTableColumnDefinition;
-
-import com.helger.commons.annotation.CodingStyleguideUnaware;
 
 
 
