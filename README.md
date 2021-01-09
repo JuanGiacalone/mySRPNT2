@@ -1,2 +1,3 @@
 # mySRPNT2
-basic crud with SpringBoot
+- basic API crud with SpringBoot
+ - SpringBOOT Data JPA w/ mysql DB
