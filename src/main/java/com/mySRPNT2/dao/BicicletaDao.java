@@ -12,12 +12,12 @@ import com.mySRPNT2.entity.Bicicleta;
 @Repository
 public class BicicletaDao {
 	
-	private static Map<Integer, Bicicleta> bicicletas;
+	private static Map<Long, Bicicleta> bicicletas;
 	
 	
 	static {
 		
-		bicicletas = new HashMap<Integer, Bicicleta>(){
+		bicicletas = new HashMap<Long, Bicicleta>(){
 
 			/**
 			 * 
@@ -25,9 +25,9 @@ public class BicicletaDao {
 			
 			
 			{
-				put(1,new Bicicleta(1,"vairo","xr40",26));
-				put(2,new Bicicleta(2,"venzo","x0",29));
-				put(3,new Bicicleta(3,"cannom","u10",27));
+				put((long) 1,new Bicicleta("vairo","xr40",26));
+				put((long) 2,new Bicicleta("venzo","x0",29));
+				put((long) 3,new Bicicleta("cannom","u10",27));
 			}
 			
 		};
@@ -38,11 +38,11 @@ public class BicicletaDao {
 		
 	}
 	
-	public Bicicleta getBicicletaById(int id) {
+	public Bicicleta getBicicletaById(long id) {
 		return BicicletaDao.bicicletas.get(id);
 	}
 
-	public void removeBicicletaById(int id) {
+	public void removeBicicletaById(long id) {
 		BicicletaDao.bicicletas.remove(id);
 	}
 	public void updateBicicleta(Bicicleta bicicleta) {

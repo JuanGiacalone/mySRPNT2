@@ -1,16 +1,67 @@
 package com.mySRPNT2.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import org.dom4j.swing.XMLTableColumnDefinition;
+
+import com.helger.commons.annotation.CodingStyleguideUnaware;
+
+
+
+@Entity(name = "Bicicleta")
+@Table(
+		name = "bicicleta"
+		/*uniqueConstraints = {
+				@UniqueConstraint(name = "", columnNames = "")
+		}*/ /// usar cuando una constraint toma nombre dificil de leer.
+		)
 public class Bicicleta {
 	
-	private int id;
+	@Id
+	@SequenceGenerator(
+			name = "bicicleta_sequence",
+			sequenceName  = "bicicleta_sequence",
+			allocationSize = 1 )
+	@GeneratedValue(
+			strategy = GenerationType.SEQUENCE,
+			generator = "bicicleta_sequence"
+			)
+	@Column(
+			name = "id",
+			updatable = false
+			)
+	private long id;
+	@Column( 
+			name = "marca",
+			nullable = false,
+			columnDefinition = "TEXT"
+			)
 	private String marca;
+	
+	@Column( 
+			name = "modelo",
+			nullable = false,
+			columnDefinition = "TEXT"
+			
+			/// unique = true (se usa para los emails)
+			)
 	private String modelo;
+	
+	@Column( name = "rodado")
 	private int rodado;
 
-	public int getId() {
+	/////////////////////////////////////////////////////////////////////////////////////
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getMarca() {
@@ -32,9 +83,15 @@ public class Bicicleta {
 		this.rodado = rodado;
 	}
 	
-	public Bicicleta(int id, String marca, String modelo, int rodado) {
+	
+	
+	@Override
+	public String toString() {
+		return "Bicicleta [id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", rodado=" + rodado + "]";
+	}
+	public Bicicleta(String marca, String modelo, int rodado) {
 		super();
-		this.id = id;
+		
 		this.marca = marca;
 		this.modelo = modelo;
 		this.rodado = rodado;
