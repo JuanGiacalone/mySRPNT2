@@ -1,6 +1,7 @@
 package com.mySRPNT2.service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class BicicletaService {
 		
 	    }
 		
-		public Bicicleta getBicicletaById(int id) {
+		public Optional<Bicicleta> getBicicletaById(long id) {
 			return this.bicicletaDao.getBicicletaById(id);
 		}
 
