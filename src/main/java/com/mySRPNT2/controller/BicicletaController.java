@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.hateoas.MediaTypes;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ import com.mySRPNT2.entity.Bicicleta;
 import com.mySRPNT2.service.BicicletaService;
 
 @RestController
-@RequestMapping("api/")
+@RequestMapping(value = "api/",produces = { MediaTypes.HAL_JSON_VALUE })
 public class BicicletaController {
 	
 	
@@ -48,6 +49,9 @@ public class BicicletaController {
 	
 	///
 	
+	/*
+	 * Este PUT ingresa o actualiza una bicicleta en el caso que se provea un id.
+	 * */
 	@PutMapping(path = "bicicletas/add",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void updateBicicleta(@RequestBody Bicicleta bicicleta) {
 		bicicletaService.updateBicicleta(bicicleta);
