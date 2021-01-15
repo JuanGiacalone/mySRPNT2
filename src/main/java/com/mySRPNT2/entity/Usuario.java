@@ -41,6 +41,7 @@ public class Usuario {
 	
 	
 	/*TODO*/
+	@SuppressWarnings("unused")
 	private String contrasenia;
 	
 	
