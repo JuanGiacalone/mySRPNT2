@@ -67,7 +67,26 @@ public class Usuario {
 			)
 	private String fechaNac;
 	
+	@Column( 
+			name = "email",
+			nullable = false,
+			columnDefinition = "TEXT"
+			)
+	private String email;
 	
+	@Column( 
+			name = "pais",
+			nullable = false,
+			columnDefinition = "TEXT"
+			)
+	private String pais;
+	
+	@Column( 
+			name = "ciudad",
+			nullable = false,
+			columnDefinition = "TEXT"
+			)
+	private String email;
 	
 	
 	
